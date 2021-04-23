@@ -1,0 +1,305 @@
+.big-screen {
+  /* background: #13233c; */
+  background: url(./resources/img/bg.png) center no-repeat;
+  background-size: 100% 100%;
+  color: #ffffff;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.big-screen .app {
+  height: 100%;
+  width: 100%;
+}
+
+.big-screen .app[v-clock] {
+  display: none;
+}
+
+.big-screen .top {
+  height: 50px;
+  line-height: 50px;
+  margin-bottom: 15px;
+  text-align: left;
+  position: relative;
+}
+
+.big-screen .top .title {
+  font-size: 26px;
+  font-weight: 600;
+  padding-left: 35px;
+  background: url("./resources/img/index_image.png") no-repeat;
+  background-position: -20% 16px;
+}
+
+.big-screen .top .title img {
+  vertical-align: middle;
+}
+
+.big-screen .top .title .subTitle {
+  font-size: 20px;
+}
+
+.big-screen .top .left {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.big-screen .top .left>div {
+  height: 25px;
+  line-height: 25px;
+}
+
+.big-screen .top .left>div.clock1 {
+  font-size: 25px;
+}
+
+.big-screen .bottom {
+  height: calc(100% - 75px);
+}
+
+.big-screen .bottom .no2 {
+  margin: 10px 0;
+}
+
+.big-screen .bottom .chart {
+  box-sizing: border-box;
+  padding: 3px;
+  overflow: hidden;
+  background: url(./resources/img/index_bg-08.png) center no-repeat;
+  background-size: 100% 100%;
+}
+
+.big-screen .bottom .chart .my-chart {
+  height: 100%;
+  position: relative;
+}
+
+.big-screen .bottom .chart .my-chart .show-no-data {
+  position: absolute;
+  top: 30px;
+  left: calc(50% - 20px);
+  color: #a6aebd;
+}
+.big-screen .bottom .chart .chart-title  {
+  height: 30px;
+  line-height: 25px;
+  text-align: left;
+}
+.big-screen .bottom .chart .chart-title span {
+  display: inline-block;
+  margin-top: 5px;
+  font-weight: 600;
+  font-size: 14px;
+  margin-left: 12px;
+  position: relative;
+}
+.big-screen .bottom .chart .chart-title span i{
+      display: inline-block;
+    font-style: normal;
+    margin: 0 8px;
+}
+
+.big-screen .bottom .chart .chart-title span:after {
+  position: absolute;
+  right: 0;
+  content: "";
+  width: 6px;
+  height: 20px;
+  border-bottom: 2px solid #0069b7;
+  border-top: 2px solid #0069b7;
+  border-right: 2px solid #0069b7;
+}
+
+.big-screen .bottom .chart .chart-title span:before {
+  position: absolute;
+  left: 0;
+  content: "";
+  width: 6px;
+  height: 20px;
+  border-left: 2px solid #0069b7;
+  border-top: 2px solid #0069b7;
+  border-bottom: 2px solid #0069b7;
+}
+
+.big-screen .bottom .chart .chart-show {
+  height: calc(100% - 31px);
+}
+
+.big-screen .bottom .chart1 {
+  height: 33%;
+}
+
+.big-screen .bottom .chart1 .show-top {
+  height: calc(40% - 5px);
+  width: 95%;
+  margin: 0 auto;
+  border-bottom: 1px solid #2b4b85;
+  margin-bottom: 5px;
+}
+
+.big-screen .bottom .chart1 .show-top .el-col {
+  height: 100%;
+}
+
+.big-screen .bottom .chart1 .show-top .top-main {
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.big-screen .bottom .chart1 .show-top .top-main.left:after {
+  display: block;
+  content: "";
+  height: 60%;
+  width: 1px;
+  background: #2b4b85;
+}
+
+.big-screen .bottom .chart1 .show-top .top-main .top-img {
+  float: left;
+}
+
+.big-screen .bottom .chart1 .show-top .top-main .top-name {
+  float: right;
+}
+
+.big-screen .bottom .chart1 .show-top .top-main .top-name .number {
+  font-family: ArialMT;
+  font-size: 22px;
+  font-weight: bold;
+  color: #24d7db;
+}
+
+.big-screen .bottom .chart1 .show-top .top-main .top-name .number>span {
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.big-screen .bottom .chart1 .show-top .top-main .top-name .title-num {
+  font-family: MicrosoftYaHei;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  color: #a6aebd;
+}
+
+.big-screen .bottom .chart1 .chart-show.chart-show-1 {
+  height: 60%;
+}
+
+.big-screen .bottom .left .chart {
+  height: calc((100% - 20px)/3);
+}
+
+.big-screen .bottom .left .chart .left-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.big-screen .bottom .left .chart .left-top .left-main {
+  margin-left: 10px;
+}
+
+.big-screen .bottom .left .chart .left-top .left-main .left-main-title {
+  font-family: MicrosoftYaHei;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0px;
+  color: #ffffff;
+}
+
+.big-screen .bottom .left .chart .left-top .left-main .left-main-num {
+  font-family: Arial-BoldMT;
+  font-size: 22px;
+  font-weight: bold;
+  color: #24d7db;
+}
+
+.big-screen .bottom .left .chart .left-bottom .left-main-bottom .el-col {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.big-screen .bottom .left .chart .left-bottom .left-main-bottom .el-col img {
+  width: 60%;
+}
+
+.big-screen .bottom .left .chart .left-bottom .left-main-bottom .el-col .left-main-title {
+  font-family: MicrosoftYaHei;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0px;
+  color: #a6aebd;
+  margin-bottom: 5px;
+}
+
+.big-screen .bottom .left .chart .left-bottom .left-main-bottom .el-col .left-main-num {
+  font-family: Arial-BoldMT;
+  font-size: 20px;
+  font-weight: bold;
+  color: #24d7db;
+}
+
+.big-screen .bottom .left .chart .left-bottom .left-main-bottom .el-col .left-main-num span {
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.big-screen .bottom .middle.chart {
+  background: url(./resources/img/index_bg-08.png) center no-repeat;
+  background-size: 100% 100%;
+}
+
+.big-screen .bottom .middle .map {
+  height: 100%;
+  position: relative;
+}
+
+.big-screen .bottom .middle .map .show-gis {
+  position: absolute;
+  bottom: 35px;
+  right: 15px;
+  /* font-size: 16px; */
+  cursor: pointer;
+  height: 25px;
+  line-height: 25px;
+}
+.big-screen .bottom .middle .map .chart-title{
+   height: 50px;
+  line-height: 26px;
+}
+.big-screen .bottom .middle .map .chart-title span {
+  /* font-size: 20px; */
+}
+
+.big-screen .bottom .middle .map .map-chart-show {
+  height: calc(100% - 50px);
+  width: 100%;
+}
+
+.big-screen .bottom .right .chart2 {
+  height: calc(42% - 20px);
+}
+
+.big-screen .bottom .right .chart3 {
+  height: 25%;
+  background: url(./resources/img/index_bg-04.png) center no-repeat;
+  background-size: 100% 100%;
+}
+
+/*# sourceMappingURL=bigScreen.css.map */

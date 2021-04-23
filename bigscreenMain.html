@@ -1,0 +1,182 @@
+<div class="big-screen">
+  <div class="app" v-clock>
+    <el-row class="top">
+      <el-col :span=24>
+        <div class="title">{{title}} <img src="./resources/img/title-bg.png" alt=""> <span
+            class="subTitle">{{subTitle}}</span></div>
+        <div class="left">
+          <div class="clock1">
+            {{clock1}}
+          </div>
+          <div>
+            {{clock2}}
+          </div>
+        </div>
+      </el-col>
+    </el-row>
+    <el-row class="bottom" type="flex" justify="space-around">
+      <el-col :span="7" class="left">
+        <div class="chart chart1">
+          <div class="chart-title">
+            <span><i>污染源监控</i></span>
+          </div>
+          <div class="chart-show">
+            <el-row class="show-top">
+              <el-col :span="24">
+                <div class="left-top" style="cursor: pointer;" @click="jumpPage(0)">
+                  <img src="./resources/img/index_bg-02.png" alt="">
+                  <div class="left-main">
+                    <div class="left-main-title">
+                      污染源企业(家)
+                    </div>
+                    <div class="left-main-num">
+                      {{CompanyNum || "0"}}
+                    </div>
+                  </div>
+                </div>
+              </el-col>
+            </el-row>
+            <div class="chart-show-1 left-bottom">
+              <el-row type="flex" justify="space-around" class="left-main-bottom">
+                <el-col :span='7'>
+                  <div style="cursor: pointer;" @click="jumpPage(0)">
+                    <img src="./resources/img/index_icon-04.png" alt="">
+                    <div class="left-main-title">
+                      生产设施
+                    </div>
+                    <div class="left-main-num">
+                      {{PFNum || "0"}} <span>处</span>
+                    </div>
+                  </div>
+
+                </el-col>
+                <el-col :span='7'>
+                  <div style="cursor: pointer;" @click="jumpPage(0)">
+                    <img src="./resources/img/index_bg-05.png" alt="">
+
+                    <div class="left-main-title">
+                      治理设施
+                    </div>
+                    <div class="left-main-num">
+                      {{EPNum || "0"}} <span>处</span>
+                    </div>
+                  </div>
+                </el-col>
+                <el-col :span='7'>
+                  <div style="cursor: pointer;" @click="jumpPage(0)">
+                    <img src="./resources/img/index_bg-06.png" alt="">
+
+                    <div class="left-main-title">
+                      监测点总数
+                    </div>
+                    <div class="left-main-num">
+                      {{DeviceNum || "0"}} <span>个</span>
+                    </div>
+                  </div>
+                </el-col>
+              </el-row>
+            </div>
+          </div>
+
+        </div>
+        <div class="chart no2">
+          <div class="chart-title"><span><i>污染源企业分布</i></span></div>
+          <!-- 引入组件chart--barChart.js -->
+          <div class="my-chart" v-loading="loading" element-loading-spinner="el-icon-loading"
+            element-loading-background="rgba(20, 42, 78, 0.8)">
+            <div ref="barChart" class="chart-show"></div>
+
+          </div>
+
+        </div>
+        <div class="chart">
+          <div class="chart-title"><span><i>近30天用电量趋势</i></span></div>
+          <!-- 引入组件leftChart2.js -->
+
+          <div class="my-chart" v-loading="loading" element-loading-spinner="el-icon-loading"
+            element-loading-background="rgba(20, 42, 78, 0.8)">
+            <div ref="barChart2" class="chart-show"></div>
+          </div>
+
+        </div>
+      </el-col>
+      <el-col :span="9" class="middle chart">
+        <div class="map">
+          <div class="chart-title"><span><i>今日异常企业动态</i></span></div>
+          <!-- 引入地图组件 mapChart.js -->
+          <div class="map-chart-show" ref='mapChart'></div>
+          <div class="show-gis" @click="jumpPage(3)">
+            <i class="el-icon-search" style="margin-right: 3px; font-size: 16px;vertical-align: middle;"></i>
+            <span>查看地图</span>
+          </div>
+
+        </div>
+      </el-col>
+      <el-col :span="7" class="right">
+        <div class="chart1 chart">
+          <div class="chart-title"><span> <i> 今日异常企业</i></span></div>
+          <div class="chart-show">
+            <el-row class="show-top">
+              <el-col :span="12">
+                <div class="top-main left">
+                  <img class="top-img" src="./resources/img/index_bg-03.png" alt="">
+                  <div class="top-name" style="cursor: pointer;" @click="jumpPage(1)">
+                    <div class="number">
+                      {{ElecEventNum || "0"}} <span>家</span>
+                    </div>
+                    <div class="title-num">
+                      污处设施异常
+                    </div>
+
+                  </div>
+                </div>
+              </el-col>
+              <el-col :span="12">
+                <div class="top-main">
+                  <img class="top-img" src="./resources/img/index_bg-03.png" alt="">
+                  <div class="top-name" style="cursor: pointer;" @click="jumpPage(2)">
+                    <div class="number">
+                      {{ElecEventProNum || "0"}} <span>家</span>
+                    </div>
+                    <div class="title-num">
+                      大气污染管控异常
+                    </div>
+                  </div>
+                </div>
+              </el-col>
+            </el-row>
+            <!-- 引入组件rightChart1. -->
+            <div class="my-chart" v-loading="loading" element-loading-spinner="el-icon-loading"
+              element-loading-background="rgba(20, 42, 78, 0.8)">
+              <div ref="rightChart1" class="chart-show chart-show-1 "></div>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="chart2 chart no2">
+          <div class="chart-title"><span> <i>异常排名</i></span></div>
+          <!-- 引入组件rightChart2.js -->
+          <div class="my-chart" v-loading="loading" element-loading-spinner="el-icon-loading"
+            element-loading-background="rgba(20, 42, 78, 0.8)">
+            <div ref="rightChart2" class="chart-show"></div>
+          </div>
+        </div>
+        <div class="chart3 chart">
+          <div class="chart-title"><span> <i>异常时长TOP5企业</i></span></div>
+          <!-- 引入组件rightChart3.js -->
+          <div class="my-chart" v-loading="loading" element-loading-spinner="el-icon-loading"
+            element-loading-background="rgba(20, 42, 78, 0.8)">
+            <div ref="rightChart3" class="chart-show"></div>
+          </div>
+        </div>
+      </el-col>
+
+    </el-row>
+  </div>
+
+
+
+
+
+</div>
